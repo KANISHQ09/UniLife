@@ -45,9 +45,11 @@ export default function DashboardLayout({ children, role }: DashboardLayoutProps
     <div className="min-h-screen bg-background flex">
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex flex-col w-64 bg-sidebar text-sidebar-foreground border-r border-sidebar-border">
-        <div className="p-5 border-b border-sidebar-border">
-          <Link to="/" className="font-display text-xl font-bold text-gradient">UniLife</Link>
-          <p className="text-xs text-sidebar-foreground/60 mt-1">{roleLabel} Dashboard</p>
+        <div className="p-5 bg-white border-b border-sidebar-border">
+          <Link to="/" className="font-display text-xl font-bold text-gradient flex items-center gap-3">
+            <img src="/logo.png" alt="UniLife" className="w-20 h-auto object-contain" />
+          </Link>
+          <p className="text-xs text-black mt-1">{roleLabel} Dashboard</p>
         </div>
         <nav className="flex-1 p-3 space-y-1">
           {navItems.map((item) => (
@@ -75,7 +77,9 @@ export default function DashboardLayout({ children, role }: DashboardLayoutProps
       {/* Mobile Header */}
       <div className="flex-1 flex flex-col">
         <header className="md:hidden flex items-center justify-between h-14 px-4 border-b bg-card">
-          <Link to="/" className="font-display text-lg font-bold text-gradient">UniLife</Link>
+          <Link to="/" className="font-display text-xl font-bold text-gradient flex items-center gap-3">
+            <img src="/logo.png" alt="UniLife" className="w-20 h-auto object-contain" />
+          </Link>
           <Button variant="ghost" size="icon" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
